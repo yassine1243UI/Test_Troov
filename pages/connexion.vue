@@ -19,7 +19,7 @@
       </form>
       <p>{{ successMessage }}</p>
     </div>
-  </template>
+</template>
   
   <script>
   export default {
