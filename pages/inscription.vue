@@ -19,7 +19,7 @@
       </form>
       <p>{{ successMessage }}</p>
     </div>
-  </template>
+</template>
   
   <script>
   export default {
@@ -52,7 +52,7 @@
       },
     },
   };
-  </script>
+</script>
   
   <style scoped>
   /* Styles spécifiques au composant */
