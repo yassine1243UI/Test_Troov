@@ -2,7 +2,7 @@
     <div>
       <button @click="deleteBlog">Supprimer</button>
     </div>
-  </template>
+</template>
   
   <script>
   export default {
@@ -29,7 +29,7 @@
       },
     },
   };
-  </script>
+</script>
   
   <style scoped>
   /* Styles spécifiques au composant */
