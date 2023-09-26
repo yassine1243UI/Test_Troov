@@ -1,14 +1,16 @@
 <template>
+  <!-- Ici on a tout le front  -->
     <div>
       <h1>Liste des Produits</h1>
       <ul>
         <li v-for="produit in produits" :key="produit._id">
           <h2>{{ produit.titre }}</h2>
           <p>{{ produit.contenue }}</p>
+          <!-- Le boutton de suppression -->
           <SuppressionBlog :blogId="produit.titre" @blogDeleted="handleBlogDeleted" />
         </li>
       </ul>
-  
+      <!-- Le formulaire pour ajouter un produit -->
       <h2>Ajouter un Produit</h2>
       <form @submit.prevent="addProduct">
         <div>
@@ -30,6 +32,7 @@
   import 'bootstrap/dist/css/bootstrap.css';
   import SuppressionBlog from './suppressionBlog.vue';  
   export default {
+    // On appelle notre Api permettant de visualiser les produits
     async asyncData({ $axios }) {
       try {
         const response = await $axios.get('/api/produit');
@@ -51,6 +54,7 @@
     methods: {
       async addProduct() {
         try {
+          //Notre Api permettant d'ajouter un produit
           const response = await this.$axios.post('/api/Ajt', this.newProduct);
   
           if (response.status === 200) {
@@ -68,12 +72,12 @@
         }
       },
       handleBlogDeleted(blogId) {
-        // Mettez à jour la liste des blogs en supprimant le blog supprimé
+        // Mise à jour de la liste des blogs en supprimant le blog supprimé
         this.produits = this.produits.filter((produit) => produit.titre !== blogId);
       },
     },
     components: {
-    SuppressionBlog, // Assurez-vous que le composant est enregistré ici
+    SuppressionBlog,
   },
   };
   </script>

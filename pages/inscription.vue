@@ -1,4 +1,5 @@
 <template>
+  <!-- Nous avons le formulaire d'inscription ici -->
     <div>
       <h2>Inscription</h2>
       <form @submit.prevent="handleSubmit">
@@ -33,6 +34,7 @@
     methods: {
       async handleSubmit() {
         try {
+          // Nous avons ici l'Api qui permet l'inscription
           const response = await this.$axios.post('/api/Inscr', {
             email: this.email,
             mdp: this.mdp,
@@ -55,7 +57,6 @@
 </script>
   
   <style scoped>
-  /* Styles spécifiques au composant */
   div {
     max-width: 800px;
     margin: 0 auto;

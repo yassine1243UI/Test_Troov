@@ -1,4 +1,5 @@
 <template>
+  <!-- Ici le front est un simple bouton  -->
     <div>
       <button @click="deleteBlog">Supprimer</button>
     </div>
@@ -12,6 +13,7 @@
     methods: {
       async deleteBlog() {
         try {
+          // On fait appele a l'Api pour supprimer un produit
           const response = await this.$axios.delete('/api/Suppr', {
             data: { titre: this.blogId },
           });

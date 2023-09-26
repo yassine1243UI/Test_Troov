@@ -1,4 +1,5 @@
 <template>
+  <!-- Nous avons le formulaire de connexion ici -->
     <div>
       <h2>Connexion</h2>
       <form @submit.prevent="handleSubmit">
@@ -33,6 +34,7 @@
     methods: {
       async handleSubmit() {
         try {
+          // Notre Api permettant la connexion d'un utilisateur
           const response = await this.$axios.post('/api/conn', {
             email: this.email,
             mdp: this.mdp,
